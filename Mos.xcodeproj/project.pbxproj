@@ -58,6 +58,7 @@
 		23BB4D3121D775D4009B51E9 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB4D3021D775D4009B51E9 /* EventMonitor.swift */; };
 		23E3C96D21DCE8F10098B107 /* StatusItemPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E3C96C21DCE8F10098B107 /* StatusItemPopoverView.swift */; };
 		23E9673F23613D1100E652F6 /* PreferencesExceptionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E9673E23613D1100E652F6 /* PreferencesExceptionInputViewController.swift */; };
+		E348919D2E67DA8000ED326B /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348919C2E67DA7200ED326B /* FeatureFlags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		23BB4D3021D775D4009B51E9 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		23E3C96C21DCE8F10098B107 /* StatusItemPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemPopoverView.swift; sourceTree = "<group>"; };
 		23E9673E23613D1100E652F6 /* PreferencesExceptionInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesExceptionInputViewController.swift; sourceTree = "<group>"; };
+		E348919C2E67DA7200ED326B /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 		0B6D3B6420419EF5004CC064 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E348919C2E67DA7200ED326B /* FeatureFlags.swift */,
 				22003C6D1E8555F0001220BC /* Utils.swift */,
 				0B12EF5D203C7D650058B169 /* Logger.swift */,
 				0B56DE3F2568DFDB00B4D9AE /* Archieve.swift */,
@@ -463,6 +466,7 @@
 				22A32B331E334B2E00A5CF38 /* PreferencesAboutViewController.swift in Sources */,
 				0BE4C93B20617C6E0001EA0E /* ScrollFilter.swift in Sources */,
 				0BB99B812D4CE9D6006A37AD /* DraggingImageView.swift in Sources */,
+				E348919D2E67DA8000ED326B /* FeatureFlags.swift in Sources */,
 				0B6D3B682041A790004CC064 /* WindowManager.swift in Sources */,
 				0B12EF1A203AD9C80058B169 /* Options.swift in Sources */,
 				228093501E2B5DA90061A00F /* PreferencesGeneralViewController.swift in Sources */,

@@ -155,14 +155,20 @@ private extension ScrollPoster {
     }
     func post(_ r: (event: CGEvent?, proxy: CGEventTapProxy?), _ v: (y: Double, x: Double)) {
         if let proxy = r.proxy, let eventClone = r.event?.copy() {
-            // 设置阶段数据
-            ScrollPhase.shared.transfrom()
-            // 设置滚动数据
-            eventClone.setDoubleValueField(.scrollWheelEventPointDeltaAxis1, value: v.y)
-            eventClone.setDoubleValueField(.scrollWheelEventPointDeltaAxis2, value: v.x)
+            // 设置滚动数据 (write pixel/point and fixed-point fields)
+            let outY = v.y
+            let outX = FeatureFlags.ignoreHorizontalSmoothing ? 0.0 : v.x
+
+            eventClone.setDoubleValueField(.scrollWheelEventPointDeltaAxis1, value: outY)
+            eventClone.setDoubleValueField(.scrollWheelEventPointDeltaAxis2, value: outX)
+
+            // Apple’s fixed-point fields: keep Y=0.0 (MOS uses point for amplitude), and force X=0 if bypassing.
             eventClone.setDoubleValueField(.scrollWheelEventFixedPtDeltaAxis1, value: 0.0)
-            eventClone.setDoubleValueField(.scrollWheelEventFixedPtDeltaAxis2, value: 0.0)
+            eventClone.setDoubleValueField(.scrollWheelEventFixedPtDeltaAxis2, value: FeatureFlags.ignoreHorizontalSmoothing ? 0.0 : 0.0)
+
+            // Mark as continuous so apps treat it as smooth wheel input
             eventClone.setDoubleValueField(.scrollWheelEventIsContinuous, value: 1.0)
+
             // EventTapProxy 标识了 EventTapCallback 在事件流中接收到事件的特定位置, 其粒度小于 tap 本身
             // 使用 tapPostEvent 可以将自定义的事件发布到 proxy 标识的位置, 避免被 EventTapCallback 本身重复接收或处理
             // 新发布的事件将早于 EventTapCallback 所处理的事件进入系统, 也如同 EventTapCallback 所处理的事件, 会被所有后续的 EventTap 接收

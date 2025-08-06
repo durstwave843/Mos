@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -835,7 +835,7 @@
                                 </scroller>
                             </scrollView>
                             <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ceK-ED-PfL">
-                                <rect key="frame" x="8" y="-1.5" width="30.5" height="34"/>
+                                <rect key="frame" x="8" y="-2" width="30" height="34"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSAddTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="ivF-Bk-aLA">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -919,7 +919,7 @@
                                 </connections>
                             </button>
                             <button imageHugsTitle="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HZK-yc-ptT">
-                                <rect key="frame" x="38" y="3" width="30.5" height="25"/>
+                                <rect key="frame" x="38" y="3" width="30" height="25"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="dnI-fa-wgE">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -2902,7 +2902,7 @@ Pick up your mouse, we just have a few thing that you need to check.</string>
                                         <rect key="frame" x="159" y="23" width="93" height="20"/>
                                         <buttonCell key="cell" type="squareTextured" title="Getting trouble ?" bezelStyle="texturedSquare" alignment="center" state="on" inset="2" id="XMw-QE-lsq">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="11"/>
+                                            <font key="font" metaFont="smallSystem"/>
                                         </buttonCell>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="LXF-Xd-jIB"/>
@@ -3018,9 +3018,9 @@ Try remove Mos from the list first, then to re-authorize by dragging the Mos ico
         <image name="AlipayLogo" width="432" height="150"/>
         <image name="AlipayQR" width="256" height="256"/>
         <image name="MEOW" width="680" height="1080"/>
-        <image name="NSAddTemplate" width="18" height="17"/>
+        <image name="NSAddTemplate" width="18" height="16"/>
         <image name="NSApplicationIcon" width="32" height="32"/>
-        <image name="NSRemoveTemplate" width="18" height="5"/>
+        <image name="NSRemoveTemplate" width="18" height="4"/>
         <image name="PaypalLogo" width="200" height="51"/>
         <image name="Refresh" width="200" height="191"/>
         <image name="SF.arrow.triangle.capsulepath" width="135" height="135"/>

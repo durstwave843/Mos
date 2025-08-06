@@ -40,6 +40,19 @@ class ScrollCore {
     let scrollEventCallBack: CGEventTapCallBack = { (proxy, type, event, refcon) in
         // 不处理触控板
         // 无法区分黑苹果, 因为黑苹果的触控板驱动直接模拟鼠标输入
+        if FeatureFlags.ignoreHorizontalSmoothing, type == .scrollWheel {
+            // Fixed-point deltas: Axis1 = vertical (Y), Axis2 = horizontal (X)
+            let dy = event.getDoubleValueField(.scrollWheelEventFixedPtDeltaAxis1)
+            let dx = event.getDoubleValueField(.scrollWheelEventFixedPtDeltaAxis2)
+
+            // Treat tiny noise as zero
+            let eps = 0.01
+
+            // If it's essentially a horizontal-only input (thumb wheel), pass it through untouched
+            if abs(dx) > eps && abs(dy) < eps {
+                return Unmanaged.passUnretained(event)
+            }
+        }
         // 无法区分 Magic Mouse, 因为其滚动特征与内置的 Trackpad 一致
         if ScrollEvent.isTrackpad(with: event) {
             return Unmanaged.passUnretained(event)
